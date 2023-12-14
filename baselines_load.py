@@ -1,12 +1,12 @@
 import gymnasium as gym
+from gym.envs.registration import register
 from stable_baselines3 import A2C
 
-models_dir = "models_final/A2C_100k"
 
 env = gym.make('LunarLander-v2', continuous=False, render_mode="human")  # continuous: LunarLanderContinuous-v2
 env.reset()
 
-model_path = f"{models_dir}/400000.zip"
+model_path = f"models_final/A2C_100k/400000.zip"
 model = A2C.load(model_path, env=env)
 
 episodes = 10

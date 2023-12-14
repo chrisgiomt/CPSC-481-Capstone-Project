@@ -4,19 +4,19 @@ import gymnasium as gym
 import os
 
 models_dir = "models/DQN"
-logdir = "logs"
+logs = "logs"
 
 
 if not os.path.exists(models_dir):
    os.makedirs(models_dir)
 
-if not os.path.exists(logdir):
-   os.makedirs(logdir)
+if not os.path.exists(logs):
+   os.makedirs(logs)
 
 env = gym.make("LunarLander-v2", render_mode="human")
 env.reset()
 
-model = DQN("MlpPolicy", env, verbose=1, tensorboard_log=logdir)
+model = DQN("MlpPolicy", env, verbose=1, tensorboard_log=logs)
 
 TIMESTEPS = 10000
 episodes = 20

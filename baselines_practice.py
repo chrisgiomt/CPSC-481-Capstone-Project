@@ -8,7 +8,7 @@ env = gym.make("LunarLander-v2", render_mode="human")
 env.reset()
 
 model = PPO("MlpPolicy", env, verbose=1)
-model.learn(total_timesteps=10)e
+model.learn(total_timesteps=10)
 
 episodes = 10
 
